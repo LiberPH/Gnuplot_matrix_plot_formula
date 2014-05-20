@@ -1,0 +1,25 @@
+#set terminal jpeg
+set output "Deterministas_Dimerización.png"
+#set title "Diferencias para caso determinista en modelos de dimerización"
+
+unset key
+
+set autoscale xfix
+set autoscale yfix
+ 
+set ytics 1 ("koff(2^5)" 0.5, "koff(2^4)" 1.5,"koff(2^3)" 2.5,"koff(2^2)" 3.5,"koff(2^1)" 4.5,"koff(2^0)" 5.5, "koff(2^-1)" 6.5,"koff(2^-2)" 7.5,"koff(2^-3)" 8.5,"koff(2^-4)" 9.5, "koff(2^-5)" 10.5, "" 1 1, "" 2 1,"" 3 1, "" 4 1, "" 5 1,"" 6 1, "" 7 1, "" 8 1,"" 9 1) nomirror
+
+
+set xtics 1 ("kd(2^-5)" 0.5, "kd(2^-4)" 1.5,"kd(2^-3)" 2.5,"kd(2^-2)" 3.5,"kd(2^-1)" 4.5,"kd(2^0)" 5.5, "kd(2^1)" 6.5,"kd(2^2)" 7.5,"kd(2^3)" 8.5,"kd(2^4)" 9.5, "kd(2^5)" 10.5) offset 0,-2.2 nomirror rotate by 90 font
+
+set grid front lw 1.5 lt -1 lc rgb 'white'
+
+set palette defined (0 "white", 10 "cyan", 70 "blue")
+set logscale cb
+set cbrange [0.0001:250]
+
+set size 1,1
+set terminal png font arial 10 size 1600,1100 
+set origin 0,0
+
+     set multiplot layout 5,4 columnsfirst scale 1,1; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_10/Dim_params_e-9_e-11/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_10/Dim_params_on_2.2e-3_off_4e-3/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_10/Dim_params_on_2.25e-2_off_4.5e-2/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_10/Dim_params_on_2.5e-3_off_3e-3/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_10/Dim_params_on_0.0065_off_0.13/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_43/Dim_params_e-9_e-11/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_43/Dim_params_on_2.2e-3_off_4e-3/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_43/Dim_params_on_2.25e-2_off_4.5e-2/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_43/Dim_params_on_2.5e-3_off_3e-3/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_43/Dim_params_on_0.0065_off_0.13/canb.txt' matrix w image noti;plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_120/Dim_params_e-9_e-11/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_120/Dim_params_on_2.2e-3_off_4e-3/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_120/Dim_params_on_2.25e-2_off_4.5e-2/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_120/Dim_params_on_2.5e-3_off_3e-3/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_120/Dim_params_on_0.0065_off_0.13/canb.txt' matrix w image noti;plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_250/Dim_params_e-9_e-11/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_250/Dim_params_on_2.2e-3_off_4e-3/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_250/Dim_params_on_2.25e-2_off_4.5e-2/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_250/Dim_params_on_2.5e-3_off_3e-3/canb.txt' matrix w image noti; plot '/home/libertad/Resultados_Determinista/Dimerization/S_dimeriza/Dim/Dim_250/Dim_params_on_0.0065_off_0.13/canb.txt' matrix w image noti;unset multiplot
